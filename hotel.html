@@ -1,0 +1,242 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+    <style>
+      body {
+        background-image: url('swimmingPool.jpg');
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      #ribbon {
+        background: rgba(141,177,249, 0.8);
+        height: 10%;
+        border: 4px solid white;
+        -webkit-clip-path: polygon(
+        23% 0%,
+        77% 0%,
+        73% 50%,
+        77% 100%,
+        23% 100%,
+        27% 50%,
+        23% 0%
+        );
+        /*move ribbon to be vertically centered*/
+      }
+      #logoPic {
+        max-width: 100%;
+        max-height: 100%;
+        margin-left: 31%;
+      }
+      #opacity {
+        width: 99%;
+        background: rgba(141,177,249, 0.8);
+        margin: auto;
+        margin-top: 2%;
+        padding-bottom: 1.5%;
+        min-height: 81%;
+        overflow: hidden;
+        border: 4px solid white;
+        border-radius: 2px;
+        padding-right: 10px;
+      }
+      .rooms {
+        width: 15%;
+        background: rgba(247,250,255);
+        border-radius: 5px 5px 5px 5px;
+        float: left;
+        margin-top: 1.5%;
+        margin-left: 1.5%;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 500;
+        box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
+        max-height: 75%;
+        overflow: auto;
+      }
+      .roomNames {
+        text-align: center;
+      }
+      input {
+        width: 96%;
+        margin: auto;
+        display: block;
+      }
+      button {
+        border-radius: 12px;
+        border: 2px solid rgba(141,177,249, 0.8);
+        background-color: white;
+        padding: 4px;
+        cursor: pointer; /*hand pointer*/
+      }
+      span {
+        color: gray;
+      }
+      .roomPadding {
+        padding-left: 2%;
+      }
+      .fullRooms {
+        color: red;
+        padding-left: 2%;
+      }
+      #removeAllOne {
+        margin-left: 2%;
+        display: block;
+      }
+      #removeAllTwo {
+        margin-left: 2%;
+        display: block;
+      }
+      #removeAllThree {
+        margin-left: 2%;
+        display: block;
+      }
+      #removeAllFour {
+        margin-left: 2%;
+        display: block;
+      }
+      #removeAllFive {
+        margin-left: 2%;
+        display: block;
+      }
+      #removeAllSix {
+        margin-left: 2%;
+        display: block;
+      }
+      .locks {
+        margin: 0 auto;
+        display: block;
+      }
+      .clean {
+        color: red;
+        text-align: center;
+        padding: 1%;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="ribbon" >
+      <img src="logoAndName.png" id="logoPic">
+    </div>
+    
+    <div id="opacity">
+    
+    <div id="roomIchi" class="rooms">
+      <div id="containerOne">
+      <h1 class="roomNames">Room One</h1>
+      <h3 class="roomPadding">Check in:</h3>
+      <input type="text" id="inputOne" class="inputs">
+      <h3 class="roomPadding">Guests:</h3>
+      <ol id="guestListOne"></ol>
+      <h3 id="fullOne" class="fullRooms"></h3>
+      <p class="roomPadding">Click guest to remove.</p>
+      <button onclick="removeAllRoomOne()" class="roomPadding" id="removeAllOne">Remove All Guests</button>
+      <br><br>
+      <h3 class="roomPadding">All Previous Guests:</h3>
+      <ol id="allGuestsRoomOne"></ol>
+      <br><br>
+      <button onclick="lockRoomOne()" class="locks">Lock Room</button>
+      <br>
+      </div>
+    </div>
+    
+    <div id="roomNi" class="rooms">
+      <div id="containerTwo">
+      <h1 class="roomNames">Room Two</h1>
+      <h3 class="roomPadding">Check in:</h3>
+      <input type="text" id="inputTwo" class="inputs">
+      <h3 class="roomPadding">Guests:</h3>
+      <ol id="guestListTwo"></ol>
+      <h3 id="fullTwo" class="fullRooms"></h3>
+      <p class="roomPadding">Click guest to remove.</p>
+      <button onclick="removeAllRoomTwo()" class="roomPadding" id="removeAllTwo">Remove All Guests</button>
+      <br><br>
+      <h3 class="roomPadding">All Previous Guests:</h3>
+      <ol id="allGuestsRoomTwo"></ol>
+      <br><br>
+      <button onclick="lockRoomTwo()" class="locks">Lock Room</button>
+      <br>
+      </div>
+    </div>
+    
+    <div id="roomSan" class="rooms">
+      <div id="containerThree">
+      <h1 class="roomNames">Room Three</h1>
+      <h3 class="roomPadding">Check in:</h3>
+      <input type="text" id="inputThree" class="inputs">
+      <h3 class="roomPadding">Guests:</h3>
+      <ol id="guestListThree"></ol>
+      <h3 id="fullThree" class="fullRooms"></h3>
+      <p class="roomPadding">Click guest to remove.</p>
+      <button onclick="removeAllRoomThree()" class="roomPadding" id="removeAllThree">Remove All Guests</button>
+      <br><br>
+      <h3 class="roomPadding">All Previous Guests:</h3>
+      <ol id="allGuestsRoomThree"></ol>
+      <br><br>
+      <button onclick="lockRoomThree()" class="locks">Lock Room</button>
+      <br>
+      </div>
+    </div>
+    
+    <div id="roomYon" class="rooms">
+      <div id="containerFour">
+      <h1 class="roomNames">Room Four</h1>
+      <h3 class="roomPadding">Check in:</h3>
+      <input type="text" id="inputFour" class="inputs">
+      <h3 class="roomPadding">Guests:</h3>
+      <ol id="guestListFour"></ol>
+      <h3 id="fullFour" class="fullRooms"></h3>
+      <p class="roomPadding">Click guest to remove.</p>
+      <button onclick="removeAllRoomFour()" class="roomPadding" id="removeAllFour">Remove All Guests</button>
+      <br><br>
+      <h3 class="roomPadding">All Previous Guests:</h3>
+      <ol id="allGuestsRoomFour"></ol>
+      <br><br>
+      <button onclick="lockRoomFour()" class="locks">Lock Room</button>
+      <br>
+      </div>
+    </div>
+    
+    <div id="roomGo" class="rooms">
+      <div id="containerFive">
+      <h1 class="roomNames">Room Five</h1>
+      <h3 class="roomPadding">Check in:</h3>
+      <input type="text" id="inputFive" class="inputs">
+      <h3 class="roomPadding">Guests:</h3>
+      <ol id="guestListFive"></ol>
+      <h3 id="fullFive" class="fullRooms"></h3>
+      <p class="roomPadding">Click guest to remove.</p>
+      <button onclick="removeAllRoomFive()" class="roomPadding" id="removeAllFive">Remove All Guests</button>
+      <br><br>
+      <h3 class="roomPadding">All Previous Guests:</h3>
+      <ol id="allGuestsRoomFive"></ol>
+      <br><br>
+      <button onclick="lockRoomFive()" class="locks">Lock Room</button>
+      <br>
+      </div>
+    </div>
+    
+    <div id="roomRoku" class="rooms">
+      <div id="containerSix">
+      <h1 class="roomNames">Room Six</h1>
+      <h3 class="roomPadding">Check in:</h3>
+      <input type="text" id="inputSix" class="inputs">
+      <h3 class="roomPadding">Guests:</h3>
+      <ol id="guestListSix"></ol>
+      <h3 id="fullSix" class="fullRooms"></h3>
+      <p class="roomPadding">Click guest to remove.</p>
+      <button onclick="removeAllRoomSix()" class="roomPadding" id="removeAllSix">Remove All Guests</button>
+      <br><br>
+      <h3 class="roomPadding">All Previous Guests:</h3>
+      <ol id="allGuestsRoomSix"></ol>
+      <br><br>
+      <button onclick="lockRoomSix()" class="locks">Lock Room</button>
+      <br>
+      </div>
+    </div>
+    
+    <script src="hotel.js"></script>
+    
+    </div>
+  </body>
+</html>
