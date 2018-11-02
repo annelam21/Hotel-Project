@@ -21,7 +21,6 @@
         27% 50%,
         23% 0%
         );
-        /*move ribbon to be vertically centered*/
       }
       #logoPic {
         max-width: 100%;
@@ -35,7 +34,6 @@
         margin-top: 2%;
         padding-bottom: 1.5%;
         min-height: 81%;
-        overflow: hidden;
         border: 4px solid white;
         border-radius: 2px;
         padding-right: 10px;
@@ -104,7 +102,10 @@
       }
       .locks {
         margin: 0 auto;
-        display: block;
+        display: block; /*starts on new line & stretches till edge*/
+      }
+      .lockedAllRooms {
+        display: none;
       }
       .clean {
         color: red;
@@ -123,115 +124,151 @@
     
     <div id="roomIchi" class="rooms">
       <div id="containerOne">
-      <h1 class="roomNames">Room One</h1>
-      <h3 class="roomPadding">Check in:</h3>
-      <input type="text" id="inputOne" class="inputs">
-      <h3 class="roomPadding">Guests:</h3>
-      <ol id="guestListOne"></ol>
-      <h3 id="fullOne" class="fullRooms"></h3>
-      <p class="roomPadding">Click guest to remove.</p>
-      <button onclick="removeAllRoomOne()" class="roomPadding" id="removeAllOne">Remove All Guests</button>
-      <br><br>
-      <h3 class="roomPadding">All Previous Guests:</h3>
-      <ol id="allGuestsRoomOne"></ol>
-      <br><br>
-      <button onclick="lockRoomOne()" class="locks">Lock Room</button>
-      <br>
+        <h1 class="roomNames">Room One</h1>
+        <h3 class="roomPadding">Check in:</h3>
+        <input type="text" id="inputOne" class="inputs">
+        <h3 class="roomPadding">Guests:</h3>
+        <ol id="guestListOne"></ol>
+        <h3 id="fullOne" class="fullRooms"></h3>
+        <p class="roomPadding">Click guest to remove.</p>
+        <button onclick="removeAllRoomOne()" class="roomPadding" id="removeAllOne">Remove All Guests</button>
+        <br><br>
+        <h3 class="roomPadding">All Previous Guests:</h3>
+        <ol id="allGuestsRoomOne"></ol>
+        <br><br>
+        <button onclick="lockRoomOne()" class="locks">Lock Room</button>
+        <br>
+      </div>
+      <div class="lockedAllRooms" id="lockedRoomOne">
+        <h2 class="clean">Room One locked for cleaning.</h2>
+        <br>
+        <button onclick="unlockRoomOne()" class="locks">Unlock Room</button>
+        <br>
       </div>
     </div>
     
     <div id="roomNi" class="rooms">
       <div id="containerTwo">
-      <h1 class="roomNames">Room Two</h1>
-      <h3 class="roomPadding">Check in:</h3>
-      <input type="text" id="inputTwo" class="inputs">
-      <h3 class="roomPadding">Guests:</h3>
-      <ol id="guestListTwo"></ol>
-      <h3 id="fullTwo" class="fullRooms"></h3>
-      <p class="roomPadding">Click guest to remove.</p>
-      <button onclick="removeAllRoomTwo()" class="roomPadding" id="removeAllTwo">Remove All Guests</button>
-      <br><br>
-      <h3 class="roomPadding">All Previous Guests:</h3>
-      <ol id="allGuestsRoomTwo"></ol>
-      <br><br>
-      <button onclick="lockRoomTwo()" class="locks">Lock Room</button>
-      <br>
+        <h1 class="roomNames">Room Two</h1>
+        <h3 class="roomPadding">Check in:</h3>
+        <input type="text" id="inputTwo" class="inputs">
+        <h3 class="roomPadding">Guests:</h3>
+        <ol id="guestListTwo"></ol>
+        <h3 id="fullTwo" class="fullRooms"></h3>
+        <p class="roomPadding">Click guest to remove.</p>
+        <button onclick="removeAllRoomTwo()" class="roomPadding" id="removeAllTwo">Remove All Guests</button>
+        <br><br>
+        <h3 class="roomPadding">All Previous Guests:</h3>
+        <ol id="allGuestsRoomTwo"></ol>
+        <br><br>
+        <button onclick="lockRoomTwo()" class="locks">Lock Room</button>
+        <br>
+      </div>
+      <div class="lockedAllRooms" id="lockedRoomTwo">
+        <h2 class="clean">Room Two locked for cleaning.</h2>
+        <br>
+        <button onclick="unlockRoomTwo()" class="locks">Unlock Room</button>
+        <br>
       </div>
     </div>
     
     <div id="roomSan" class="rooms">
       <div id="containerThree">
-      <h1 class="roomNames">Room Three</h1>
-      <h3 class="roomPadding">Check in:</h3>
-      <input type="text" id="inputThree" class="inputs">
-      <h3 class="roomPadding">Guests:</h3>
-      <ol id="guestListThree"></ol>
-      <h3 id="fullThree" class="fullRooms"></h3>
-      <p class="roomPadding">Click guest to remove.</p>
-      <button onclick="removeAllRoomThree()" class="roomPadding" id="removeAllThree">Remove All Guests</button>
-      <br><br>
-      <h3 class="roomPadding">All Previous Guests:</h3>
-      <ol id="allGuestsRoomThree"></ol>
-      <br><br>
-      <button onclick="lockRoomThree()" class="locks">Lock Room</button>
-      <br>
+        <h1 class="roomNames">Room Three</h1>
+        <h3 class="roomPadding">Check in:</h3>
+        <input type="text" id="inputThree" class="inputs">
+        <h3 class="roomPadding">Guests:</h3>
+        <ol id="guestListThree"></ol>
+        <h3 id="fullThree" class="fullRooms"></h3>
+        <p class="roomPadding">Click guest to remove.</p>
+        <button onclick="removeAllRoomThree()" class="roomPadding" id="removeAllThree">Remove All Guests</button>
+        <br><br>
+        <h3 class="roomPadding">All Previous Guests:</h3>
+        <ol id="allGuestsRoomThree"></ol>
+        <br><br>
+        <button onclick="lockRoomThree()" class="locks">Lock Room</button>
+        <br>
+      </div>
+      <div class="lockedAllRooms" id="lockedRoomThree">
+        <h2 class="clean">Room Three locked for cleaning.</h2>
+        <br>
+        <button onclick="unlockRoomThree()" class="locks">Unlock Room</button>
+        <br>
       </div>
     </div>
     
     <div id="roomYon" class="rooms">
       <div id="containerFour">
-      <h1 class="roomNames">Room Four</h1>
-      <h3 class="roomPadding">Check in:</h3>
-      <input type="text" id="inputFour" class="inputs">
-      <h3 class="roomPadding">Guests:</h3>
-      <ol id="guestListFour"></ol>
-      <h3 id="fullFour" class="fullRooms"></h3>
-      <p class="roomPadding">Click guest to remove.</p>
-      <button onclick="removeAllRoomFour()" class="roomPadding" id="removeAllFour">Remove All Guests</button>
-      <br><br>
-      <h3 class="roomPadding">All Previous Guests:</h3>
-      <ol id="allGuestsRoomFour"></ol>
-      <br><br>
-      <button onclick="lockRoomFour()" class="locks">Lock Room</button>
-      <br>
+        <h1 class="roomNames">Room Four</h1>
+        <h3 class="roomPadding">Check in:</h3>
+        <input type="text" id="inputFour" class="inputs">
+        <h3 class="roomPadding">Guests:</h3>
+        <ol id="guestListFour"></ol>
+        <h3 id="fullFour" class="fullRooms"></h3>
+        <p class="roomPadding">Click guest to remove.</p>
+        <button onclick="removeAllRoomFour()" class="roomPadding" id="removeAllFour">Remove All Guests</button>
+        <br><br>
+        <h3 class="roomPadding">All Previous Guests:</h3>
+        <ol id="allGuestsRoomFour"></ol>
+        <br><br>
+        <button onclick="lockRoomFour()" class="locks">Lock Room</button>
+        <br>
+      </div>
+      <div class="lockedAllRooms" id="lockedRoomFour">
+        <h2 class="clean">Room Four locked for cleaning.</h2>
+        <br>
+        <button onclick="unlockRoomFour()" class="locks">Unlock Room</button>
+        <br>
       </div>
     </div>
     
     <div id="roomGo" class="rooms">
       <div id="containerFive">
-      <h1 class="roomNames">Room Five</h1>
-      <h3 class="roomPadding">Check in:</h3>
-      <input type="text" id="inputFive" class="inputs">
-      <h3 class="roomPadding">Guests:</h3>
-      <ol id="guestListFive"></ol>
-      <h3 id="fullFive" class="fullRooms"></h3>
-      <p class="roomPadding">Click guest to remove.</p>
-      <button onclick="removeAllRoomFive()" class="roomPadding" id="removeAllFive">Remove All Guests</button>
-      <br><br>
-      <h3 class="roomPadding">All Previous Guests:</h3>
-      <ol id="allGuestsRoomFive"></ol>
-      <br><br>
-      <button onclick="lockRoomFive()" class="locks">Lock Room</button>
-      <br>
+        <h1 class="roomNames">Room Five</h1>
+        <h3 class="roomPadding">Check in:</h3>
+        <input type="text" id="inputFive" class="inputs">
+        <h3 class="roomPadding">Guests:</h3>
+        <ol id="guestListFive"></ol>
+        <h3 id="fullFive" class="fullRooms"></h3>
+        <p class="roomPadding">Click guest to remove.</p>
+        <button onclick="removeAllRoomFive()" class="roomPadding" id="removeAllFive">Remove All Guests</button>
+        <br><br>
+        <h3 class="roomPadding">All Previous Guests:</h3>
+        <ol id="allGuestsRoomFive"></ol>
+        <br><br>
+        <button onclick="lockRoomFive()" class="locks">Lock Room</button>
+        <br>
+      </div>
+      <div class="lockedAllRooms" id="lockedRoomFive">
+        <h2 class="clean">Room Five locked for cleaning.</h2>
+        <br>
+        <button onclick="unlockRoomFive()" class="locks">Unlock Room</button>
+        <br>
       </div>
     </div>
     
     <div id="roomRoku" class="rooms">
       <div id="containerSix">
-      <h1 class="roomNames">Room Six</h1>
-      <h3 class="roomPadding">Check in:</h3>
-      <input type="text" id="inputSix" class="inputs">
-      <h3 class="roomPadding">Guests:</h3>
-      <ol id="guestListSix"></ol>
-      <h3 id="fullSix" class="fullRooms"></h3>
-      <p class="roomPadding">Click guest to remove.</p>
-      <button onclick="removeAllRoomSix()" class="roomPadding" id="removeAllSix">Remove All Guests</button>
-      <br><br>
-      <h3 class="roomPadding">All Previous Guests:</h3>
-      <ol id="allGuestsRoomSix"></ol>
-      <br><br>
-      <button onclick="lockRoomSix()" class="locks">Lock Room</button>
-      <br>
+        <h1 class="roomNames">Room Six</h1>
+        <h3 class="roomPadding">Check in:</h3>
+        <input type="text" id="inputSix" class="inputs">
+        <h3 class="roomPadding">Guests:</h3>
+        <ol id="guestListSix"></ol>
+        <h3 id="fullSix" class="fullRooms"></h3>
+        <p class="roomPadding">Click guest to remove.</p>
+        <button onclick="removeAllRoomSix()" class="roomPadding" id="removeAllSix">Remove All Guests</button>
+        <br><br>
+        <h3 class="roomPadding">All Previous Guests:</h3>
+        <ol id="allGuestsRoomSix"></ol>
+        <br><br>
+        <button onclick="lockRoomSix()" class="locks">Lock Room</button>
+        <br>
+      </div>
+      <div class="lockedAllRooms" id="lockedRoomSix">
+        <h2 class="clean">Room Six locked for cleaning.</h2>
+        <br>
+        <button onclick="unlockRoomSix()" class="locks">Unlock Room</button>
+        <br>
       </div>
     </div>
     
